@@ -1,0 +1,44 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.105dP-07/12/21
+Compiler=PCM
+CCSVersion=5.105Pd
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\hakan\Documents\GitHub\GomuluSistemler\Uygulamalar\001\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=22-08-2021
+D1_L=9
+D1_L1=[42309]Project Opened.
+D1_L2=[45495]Started Editing.
+D1_L3=[45938]Stopped Editing.
+D1_L4=[49228]Started Editing.
+D1_L5=[49587]Stopped Editing.
+D1_L6=[49616]Started Editing.
+D1_L7=[49980]Stopped Editing.
+D1_L8=[51727]Started Editing.
+D1_L9=[52352]Stopped Editing.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=7
+[Units]
+Count=1
+1=main (main)

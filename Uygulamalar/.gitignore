@@ -1,0 +1,13 @@
+# Windows image file caches
+Thumbs.db
+
+# OSX 
+
+.DS_Store
+
+# Backup Files
+
+__history
+Project Backups
+
+*.workspace
