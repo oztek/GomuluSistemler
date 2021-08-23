@@ -19,7 +19,7 @@ forcecoff=0
 [ProjectLog]
 Days=1
 D1=22-08-2021
-D1_L=9
+D1_L=10
 D1_L1=[42309]Project Opened.
 D1_L2=[45495]Started Editing.
 D1_L3=[45938]Stopped Editing.
@@ -29,11 +29,16 @@ D1_L6=[49616]Started Editing.
 D1_L7=[49980]Stopped Editing.
 D1_L8=[51727]Started Editing.
 D1_L9=[52352]Stopped Editing.
+TotalEdit=10
+TotalDebug=0
+D1_E=10
+D1_D=0
+D1_L10=[59399]Project Closed.
 
 [Opened Files]
 1=main.c
 t1=1
-Count=1
+Count=0
 [main.c]
 Type=4
 
