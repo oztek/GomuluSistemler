@@ -1,0 +1,195 @@
+CCS PCM C Compiler, Version 5.105Pd, 1               23-Aðu-21 21:19
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+               Filename:   C:\Users\hakan\Documents\GitHub\GomuluSistemler\Uygulamalar\003\main.lst
+
+               ROM used:   121 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           6 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <main.h>
+.................... #include <16F877A.h>
+.................... //////////// Standard Header file for the PIC16F877A device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F877A
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10
+.................... #use delay(crystal=20000000)
+.................... 
+.................... 
+.................... 
+.................... #fuses XT, NOWDT, NOPROTECT, NOBROWNOUT, NOLVP, NOPUT, NOWRT, NODEBUG
+.................... 
+.................... #use delay(clock=4M)
+0004:  MOVLW  21
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  4A
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETURN
+.................... 
+.................... void main()
+0019:  MOVF   03,W
+001A:  ANDLW  1F
+001B:  MOVWF  03
+001C:  BSF    03.5
+001D:  BSF    1F.0
+001E:  BSF    1F.1
+001F:  BSF    1F.2
+0020:  BCF    1F.3
+0021:  MOVLW  07
+0022:  MOVWF  1C
+0023:  BCF    03.7
+.................... {
+....................    set_tris_b(0x00); //0000 0000 hepsi output pini atandilar.
+0024:  MOVLW  00
+0025:  MOVWF  06
+....................    set_tris_d(0x03); //0000 0011 D0 ve D1 input pini atandilar.
+0026:  MOVLW  03
+0027:  MOVWF  08
+....................    output_b(0); //B pinlerine 0 bas.
+0028:  CLRF   06
+0029:  BCF    03.5
+002A:  CLRF   06
+....................    while(TRUE)
+....................    {
+....................       if(input(pin_d0)==1){ //D0 pininden giris 1 ise
+002B:  BSF    03.5
+002C:  BSF    08.0
+002D:  BCF    03.5
+002E:  BTFSS  08.0
+002F:  GOTO   077
+....................          output_b(1); // B pinlerinden 0000 0001 ciktisi uret. Yani RB0 dan bir ciktisi uret.
+0030:  BSF    03.5
+0031:  CLRF   06
+0032:  MOVLW  01
+0033:  BCF    03.5
+0034:  MOVWF  06
+....................          delay_ms(100); // 100ms bekle
+0035:  MOVLW  64
+0036:  MOVWF  21
+0037:  CALL   004
+....................          output_b(2); // B pinlerinden 0000 0010 ciktisi uret. Yani RB1 den bir ciktisi uret.
+0038:  BSF    03.5
+0039:  CLRF   06
+003A:  MOVLW  02
+003B:  BCF    03.5
+003C:  MOVWF  06
+....................          delay_ms(100); // 100ms bekle
+003D:  MOVLW  64
+003E:  MOVWF  21
+003F:  CALL   004
+....................          output_b(4); // B pinlerinden 0000 0100 ciktisi uret. Yani RB2 den bir ciktisi uret.
+0040:  BSF    03.5
+0041:  CLRF   06
+0042:  MOVLW  04
+0043:  BCF    03.5
+0044:  MOVWF  06
+....................          delay_ms(100); // 100ms bekle
+0045:  MOVLW  64
+0046:  MOVWF  21
+0047:  CALL   004
+....................          output_b(8); // B pinlerinden 0000 1000 ciktisi uret. Yani RB3 den bir ciktisi uret.
+0048:  BSF    03.5
+0049:  CLRF   06
+004A:  MOVLW  08
+004B:  BCF    03.5
+004C:  MOVWF  06
+....................          delay_ms(100); // 100ms bekle
+004D:  MOVLW  64
+004E:  MOVWF  21
+004F:  CALL   004
+....................          output_b(16); // B pinlerinden 0001 0000 ciktisi uret. Yani RB4 den bir ciktisi uret.
+0050:  BSF    03.5
+0051:  CLRF   06
+0052:  MOVLW  10
+0053:  BCF    03.5
+0054:  MOVWF  06
+....................          delay_ms(100); // 100ms bekle
+0055:  MOVLW  64
+0056:  MOVWF  21
+0057:  CALL   004
+....................          output_b(32); // B pinlerinden 0010 0000 ciktisi uret. Yani RB5 den bir ciktisi uret.
+0058:  BSF    03.5
+0059:  CLRF   06
+005A:  MOVLW  20
+005B:  BCF    03.5
+005C:  MOVWF  06
+....................          delay_ms(100); // 100ms bekle
+005D:  MOVLW  64
+005E:  MOVWF  21
+005F:  CALL   004
+....................          output_b(64); // B pinlerinden 0100 0000 ciktisi uret. Yani RB6 den bir ciktisi uret.
+0060:  BSF    03.5
+0061:  CLRF   06
+0062:  MOVLW  40
+0063:  BCF    03.5
+0064:  MOVWF  06
+....................          delay_ms(100); // 100ms bekle
+0065:  MOVLW  64
+0066:  MOVWF  21
+0067:  CALL   004
+....................          output_b(128); // B pinlerinden 1000 0000 ciktisi uret. Yani RB7 den bir ciktisi uret.
+0068:  BSF    03.5
+0069:  CLRF   06
+006A:  MOVLW  80
+006B:  BCF    03.5
+006C:  MOVWF  06
+....................          delay_ms(100);
+006D:  MOVLW  64
+006E:  MOVWF  21
+006F:  CALL   004
+....................          output_b(0);
+0070:  BSF    03.5
+0071:  CLRF   06
+0072:  BCF    03.5
+0073:  CLRF   06
+....................          delay_ms(100); // B pinlerinden 0000 0000 ciktisi uret. Yani hepsinden sýfýr ciktisi uret.
+0074:  MOVLW  64
+0075:  MOVWF  21
+0076:  CALL   004
+....................       }
+0077:  GOTO   02B
+.................... 
+....................       //TODO: User Code
+....................    }
+.................... 
+.................... }
+0078:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F39   XT NOWDT NOPUT NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

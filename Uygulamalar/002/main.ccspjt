@@ -29,11 +29,16 @@ D1_E=6
 D1_D=0
 D1_L4=[59956]Project Closed.
 D2=23-08-2021
-D2_L=4
+D2_L=9
 D2_L1=[44883]Project Opened.
 D2_L2=[45876]Started Editing.
 D2_L3=[46190]Stopped Editing.
 D2_L4=[48355]Started Editing.
+D2_L5=[48988]Stopped Editing.
+D2_L6=[75724]Project Opened.
+D2_L7=[75767]Project Closed.
+D2_L8=[81999]Project Opened.
+D2_L9=[82016]Project Closed.
 
 [Opened Files]
 1=main.c
